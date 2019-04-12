@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+s {;
+	
+}
+</style>
+<script>
+	$(function() {
+		$('#viewdetail').click(function() {
+			$('#detail').toggle();
+			var mode = $('#detail').css("display");
+			if(mode == "none"){
+				$('#viewdetail').html('<i class="fas fa-caret-right"></i>자세히 보기');	
+			}else{
+				$('#viewdetail').html('<i class="fas fa-caret-down"></i>숨기기');
+			}
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>이순신</h3>
+	<p>조선시대의 해군이다.</p>
+	<a href="#" id="viewdetail">
+		<i class="fas fa-caret-right">자세히 보기</i></a>
+	<div id="detail" style="display: none">
+		<p>임진왜란때 어쩌고 저쩌고</p>
+	</div>
+</body>
+</html>

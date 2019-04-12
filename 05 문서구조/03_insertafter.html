@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+div {
+	text-indent: 20px;
+}
+</style>
+<script>
+	$(function() {
+		var para1 = $('<p>새문단1</p>').css('font-weight', 'bold');
+		var para2 = $('<p>새문단2</p>').css('font-weight', 'bold');
+		var para3 = $('<p>새문단3</p>').css('font-weight', 'bold');
+		var para4 = $('<p>새문단4</p>').css('font-weight', 'bold');
+		var div = $('div');
+		para1.appendTo(div);
+		para2.prependTo(div);
+		para3.insertAfter(div);
+		para4.insertBefore(div);
+	});
+</script>
+</head>
+<body>
+	<h2>문단 삽입 테스트</h2>
+	<div>
+		<p>원래 있던 문단1</p>
+		<p>원래 있던 문단2</p>
+		<p>원래 있던 문단3</p>
+	</div>
+</body>
+</html>

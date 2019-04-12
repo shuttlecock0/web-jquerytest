@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+s {;
+	
+}
+</style>
+<script>
+	$(function() {
+		$('span').css('background', 'yellow');
+		$('div > span').css('border', 'red solid 3px');
+	});
+</script>
+</head>
+<body>
+	<p>
+		이 문단에는 <span>스팬</span> 엘리먼트가 있다.
+	</p>
+	<div>
+		이 디비전에도 <span>스팬</span> 엘리먼트가 있다.
+		<p>
+			내부 문단의 <span>스팬</span> 엘리먼트이다.
+		</p>
+		<div>
+			<p>
+				아주 <strong> 깊은 곳에 <i> 숨어 있는 <span>스팬</span> 엘리먼트
+				</i>도
+				</strong> 있다.
+			</p>
+		</div>
+	</div>
+</body>
+</html>

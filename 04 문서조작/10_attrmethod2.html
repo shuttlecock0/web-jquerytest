@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+	s{ ;}
+</style>
+<script>
+var images = [
+	'../images/Chrysanthemum.jpg',
+	'../images/Desert.jpg',
+	'../images/Hydrangeas.jpg',
+	'../images/Jellyfish.jpg',
+	'../images/Koala.jpg',
+	'../images/Lighthouse.jpg',
+	'../images/Penguins.jpg',
+	'../images/Tulips.jpg',
+];
+$(function(){
+	var ix = 0;
+	$('img').attr('src', images[ix]);
+	setInterval(function(){
+		ix = (ix + 1) % images.length;
+		$('img').attr('src', images[ix]);
+	}, 1000)
+});
+</script>	
+</head>
+<body>
+	<img width = "300"/>
+</body>
+</html>

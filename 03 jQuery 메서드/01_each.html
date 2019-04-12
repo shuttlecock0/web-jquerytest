@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+s {;
+	
+}
+</style>
+<script>
+	$(function() {
+		var arColor = [ 'yellow', 'red', 'green', 'blue', 'gray' ];
+		$('h3').each(function(index, item) {
+			$(item).css('background', arColor[index]);
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>문단0</h3>
+	<h3>문단1</h3>
+	<h3>문단2</h3>
+	<h3>문단3</h3>
+	<h3>문단4</h3>
+</body>
+</html>

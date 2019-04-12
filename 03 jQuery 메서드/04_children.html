@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+s {;
+	
+}
+</style>
+<script>
+	$(function() {
+		$('p').each(function(index) {
+			if ($(this).text().length < 20) {
+				$(this).children('strong').css('background', 'yellow')
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		문단 안에 <strong>강조</strong> 표시가 있다.
+	</p>
+	<p>
+		이 문단도 <span><strong>마찬가지</strong></span>이다.
+	</p>
+	<div>
+		디비전 안에 <strong>강조</strong> 표시가 있다.
+	</div>
+	<p>
+		이 문단은 내부에 글자가 <strong>무척</strong>이나 많은 아주 길다란 문단이다.
+	</p>
+</body>
+</html>

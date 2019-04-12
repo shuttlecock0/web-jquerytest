@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+s {;
+	
+}
+</style>
+<script>
+	function btnview() {
+		alert("이름 : " + $('#user').val() + "\n" + "남자 : "
+				+ $('#male:checked').val() + "\n" + "소개 : " + $('#intro').val()
+				+ "\n" + "직업 : " + $('#work').val());
+	}
+	function btnchange() {
+		$('#user').val("김유신");
+	}
+	$(function() {
+
+	});
+</script>
+</head>
+<body>
+	<form>
+		<label for="user">이름</label> <input type="text" id="user" value="김상형" /><br />
+		<label for="male">남자</label> <input type="checkbox" id="male" checked /><br />
+		<label for="intro">소개</label>
+		<textarea id="intro" cols="40" rows="4">자기 소개
+</textarea>
+		<br /> <label for="work">직업</label> <select id="work">
+			<option value="programmer">프로그래머</option>
+			<option value="progammer">프로게이머</option>
+			<option value="whitehand">백수</option>
+		</select><br />
+		<button type="button" onclick="btnview();">조사하기</button>
+		<button type="button" onclick="btnchange();">이름 변경</button>
+	</form>
+</body>
+</html>

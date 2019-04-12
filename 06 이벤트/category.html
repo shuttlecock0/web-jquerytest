@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+	s{ ;}
+</style>
+<script>
+var category = {
+	'의류' : {
+		'바지' : ['바지1', '바지2', '바지3'],
+		'점퍼' : ['점퍼1', '점퍼2', '점퍼3'],
+		'코트' : ['코트1', '코트2', '코트3'],
+	},
+	
+	'신발' : {
+		'등산화' : ['등산화1', '등산화2', '등산화3'],
+		'운동화' : ['운동화1', '운동화2', '운동화3'],
+		'브랜드' : ['브랜드1', '브랜드2', '브랜드3']
+	},
+	
+	'컴퓨터' :{
+		'데스크탑 ' : ['데스크탑1', '데스크탑2', '데스크탑3'],
+		'노트북' : ['노트북1', '노트북2', '노트북3'],
+		'브랜드' : ['브랜드1', '브랜드2', '브랜드3']
+	}
+}
+
+function fillSelect(select, c){
+	select.append('<option>--선택하세요--</option>');
+	c.forEach(function(e){
+		$(`<option>${e}</option>`).appendTo(select);
+	});
+}
+
+$(function(){
+	var sel1; //첫 번째 선택 카테고리
+	var sel2; //두 번재 선택 카테고리
+	fillSelect($('#category1'), Object.keys(category));
+	//첫 번째 카테고리 선택 처리
+	$('#category1').change(function(){
+		//두 번째, 세 번째 카테고리 내용 지우기
+		$('#category2, #category3').empty();
+		//출력 문자열 지우기
+		$('#final').empty();
+		sel1 = $('#category1 option:selected').val();
+		
+		if(category[sel1]){
+			fillSelect($('#category2'), Object.keys(category[sel1]))
+		}
+	});
+	
+	//두 번째 카테고리 처리
+	$('#category2').change(function(){
+		$('#category3, #final').empty();
+		
+		sel2 = $('#category2 option:selected').val();
+		if(category[sel1][sel2]){ //유효한 카테고리이면
+			fillSelect($('#category3'), category[sel1][sel2]);
+		}
+	});
+	
+	$('#category3').change(function(){
+		if($('#category3 option:selected').index() != 0){
+			var sel3 = $('#category3 option:selected').val();
+			$('#final').text(`${sel1}/${sel2}/${sel3}`);
+		}
+	});
+});
+
+</script>	
+</head>
+<body>
+	<h1>상품</h1>
+	카테고리:
+	<select id="category1"></select>
+	<select id="category2"></select>
+	<select id="category3"></select>
+	<hr>
+	최종 선택: <span id="find"></span>
+</body>
+</html>

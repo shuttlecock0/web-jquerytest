@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+s {;
+	
+}
+</style>
+<script>
+	$(function() {
+		$('p').filter('.sample').find('strong').css('background', 'yellow');
+	});
+</script>
+</head>
+<body>
+	<p>평범한 문단입니다.</p>
+	<p class="sample">
+		두 번째 <strong>문단</strong>입니다.
+	</p>
+	<p>
+		세 번째 <strong>문단</strong>입니다.
+	</p>
+	<p class="sample">이 문단은 자식이 없습니다.</p>
+	<p class="sample">
+		이 문단에는 <i>기울임체</i>가 있습니다.
+	</p>
+</body>
+</html>
