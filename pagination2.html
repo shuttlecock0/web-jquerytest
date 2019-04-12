@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+	integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+s {;
+	
+}
+</style>
+<script>
+$(function(){
+	$.fn.pagination = function(total){
+		var ul = $('<ul class = "pagination">');
+		for(var ix = 1;ix<=total;ix++){
+			var li = $(`<li class="page-item">
+				<a class="page-link" href = "?page=${ix}">${ix}</a>
+			</li>`);
+			li.appendTo(ul);
+		}
+		this.append(ul);
+		return this;
+	}
+	$('#paging').pagination(10);
+
+});
+</script>
+</head>
+<body>
+	<div class="container">
+		<h2>Pagination</h2>
+		<p>The .pagination class provides pagination links:</p>
+		<div id="paging"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.detail img {
+	width: 400px;
+}
+
+.thumbs {
+	width: 400px;
+	height: 100px;
+	position: relative;
+}
+
+.thumbs .control {
+	position: absolute;
+	font-size: 2em;
+	color: white;
+	text-shadow: 2px 2px 5px black;
+	line-height: 100px;
+}
+
+.thumbs .control.left {
+	top: 0;
+	left: 0;
+	margin-left: 5px;
+}
+
+.thumbs .control.right {
+	top: 0;
+	right: 0;
+	margin-right: 5px;
+}

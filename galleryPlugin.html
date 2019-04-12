@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+	.overlay
+	{
+		padding-left:5px;
+		position: absolute;
+		margin-left: 3px;
+		margin-top: 15px;
+	}
+</style>
+
+<script>
+var images = [
+	'images/Hydrangeas.jpg',
+	'images/Koala.jpg',
+	'images/Lighthouse.jpg',
+	'images/Penguins.jpg',
+];
+
+$(function(){
+	
+	jQuery.fn.plugin = function(){
+		$('<img>').attr({
+				src: images[0],
+				width: 400
+			}).appendTo('#detail');
+		
+		var end = images.length;
+		var num = 0;
+		
+		images.map(function(img){
+			return `<img src="${img}" width = "100"/>`;
+		})
+		.forEach(function(img){
+			$(img).appendTo('#thumbs')
+			num++;
+			if(num == 1){
+				$(img).before('<img src="images/Tulips.jpg" class="overlay" />');
+				console.log(img);
+			}
+			else if(num == end){
+				console.log(img);
+			}
+		});
+		
+		$('#thumbs>img').click(function(){
+			var ix = $(this).index();
+			$('#detail>img').attr("src", images[ix]);
+		});
+	}
+	$('#gallery').plugin();
+});
+
+</script>	
+</head>
+<body>
+	<div id = "gallery">
+		<div id="detail"></div>
+		<div id="thumbs"></div>
+	</div>
+</body>
+</html>
