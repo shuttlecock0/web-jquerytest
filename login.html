@@ -6,47 +6,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="bower_components/lightbox2/dist/css/lightbox.min.css">
-
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script src="bower_components/lightbox2/dist/js/lightbox.min.js"></script>
-<script src="bower_components/tinymce/tinymce.min.js"></script>
-
 <style>
 	s { ;}
 </style>
 <script>
 $(function() {
-	tinymce.init({ 
-		selector:'textarea',
-		language : 'ko_KR',	
+	$('#myform').submit(function(e){
+		// 디폴트 submit 차단
+		e.preventDefault();
+		
+		// 유효성 검사 
+		var userId = $('[name=userId]').val();
+		if(userId.length < 6) {
+			alert('사용자 ID는 6글자 이상이어야 합니다.');
+			$('[name=userId]').focus();
+			return;
+		}
+		
+		var password = $('[name=password]').val();
+		if(password.length < 6) {
+			alert('비밀번호는 6글자 이상이어야 합니다.');
+			$('[name=password]').focus();
+			return;
+		}		
+
+		// 제출
+		this.submit();	
 	});
-	
 });
 </script>
 
 </head>
-<body>
-<!-- 
-	<a href="images/Desert.jpg" 
-			data-lightbox="image-1" 
-			data-title="My caption">
-			<img src="images/Desert.jpg" width="100"></a>
-	<a href="images/Koala.jpg" 
-			data-lightbox="image-1" 
-			data-title="My caption">
-			<img src="images/Koala.jpg" width="100"></a>
-	<a href="images/Tulips.jpg" 
-			data-lightbox="image-1" 
-			data-title="My caption">
-			<img src="images/Tulips.jpg" width="100"></a>
-			 -->
-		<textarea>웹 에디터</textarea>
-			
+<body >
+	<div  class="mx-auto w-50">
+		<h1 class="my-3">로그인</h1>
+		<form id="myform">
+			id : <input type="text" name="userId" required ><br>
+			password : <input type="text" name="password" required><br>
+			<input type="submit" class="btn btn-primary">
+		</form>
+	</div>
 </body>
 </html>
+
 
 
 

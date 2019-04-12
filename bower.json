@@ -1,0 +1,20 @@
+{
+  "name": "jquerytest",
+  "authors": [
+    "김구수 <gusukim@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lightbox2": "lightbox#^2.10.0"
+  }
+}

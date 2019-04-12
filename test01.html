@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<style>
+	s { ;}
+</style>
+<!--  나의 스크립트  -->
+
+<script>
+$(function(){
+	$('head').contents().each(function(){
+		console.log(this.tagName, this.nodeType);
+	})
+});
+</script>
+</head>
+<body>
+	<p>보이는 문단</p>
+	<p style="visibility:hidden;">숨겨진 문단</p>
+	<p style="display:none;">자리를 차지하지 못한 문단</p>
+	<p style="opacity:0;">투명한 문단</p>
+	<hr />
+	
+</body>
+
+</html>
